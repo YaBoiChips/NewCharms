@@ -18,10 +18,12 @@ import net.minecraft.world.level.block.entity.RandomizableContainerBlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.AABB;
 import net.minecraftforge.common.capabilities.Capability;
+import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.common.util.LazyOptional;
-import net.minecraftforge.items.CapabilityItemHandler;
+import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.IItemHandlerModifiable;
 import net.minecraftforge.items.wrapper.InvWrapper;
+import org.jetbrains.annotations.NotNull;
 import yaboichips.charms.blocks.CharmContainerBlock;
 import yaboichips.charms.container.CharmContainer;
 import yaboichips.charms.core.CharmTileEntityTypes;
@@ -35,6 +37,8 @@ public class CharmContainerTE extends RandomizableContainerBlockEntity {
 
     private final IItemHandlerModifiable items = createHandler();
     private final LazyOptional<IItemHandlerModifiable> itemHandler = LazyOptional.of(() -> items);
+    private final LazyOptional<IItemHandler> holder = LazyOptional.of(() -> items);
+
     protected int numPlayersUsing;
     private NonNullList<ItemStack> chestContents = NonNullList.withSize(1, ItemStack.EMPTY);
 
@@ -132,10 +136,7 @@ public class CharmContainerTE extends RandomizableContainerBlockEntity {
 
     @Override
     public <T> LazyOptional<T> getCapability(@Nonnull Capability<T> cap, @Nonnull Direction side) {
-        if (cap == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY) {
-            return itemHandler.cast();
-        }
-        return super.getCapability(cap, side);
+        return ForgeCapabilities.ITEM_HANDLER.orEmpty(cap, this.holder);
     }
 
     @Nonnull

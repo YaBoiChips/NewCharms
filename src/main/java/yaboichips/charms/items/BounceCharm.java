@@ -15,7 +15,7 @@ public class BounceCharm extends CharmItem implements ICurioItem {
 
     @Override
     public void playRightClickEquipSound(LivingEntity livingEntity, ItemStack stack) {
-        livingEntity.level.playSound(null, livingEntity.blockPosition(),
+        livingEntity.level().playSound(null, livingEntity.blockPosition(),
                 SoundEvents.ARMOR_EQUIP_ELYTRA, SoundSource.NEUTRAL,
                 1.0F, 1.0F);
     }
@@ -28,7 +28,7 @@ public class BounceCharm extends CharmItem implements ICurioItem {
     @Override
     public void curioTick(SlotContext slotContext, ItemStack stack) {
         LivingEntity entity = slotContext.entity();
-        if (entity.isOnGround()) {
+        if (!entity.getBlockStateOn().isAir()) {
             if (!entity.isCrouching()) {
                 double f = 0.91d + 0.04d;
                 entity.setDeltaMovement(entity.getDeltaMovement().x() / f, -entity.getDeltaMovement().y() + 1, entity.getDeltaMovement().z() / f);

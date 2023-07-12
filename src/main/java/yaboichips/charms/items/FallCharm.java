@@ -15,7 +15,7 @@ public class FallCharm extends CharmItem implements ICurioItem {
 
     @Override
     public void playRightClickEquipSound(LivingEntity livingEntity, ItemStack stack) {
-        livingEntity.level.playSound(null, livingEntity.blockPosition(),
+        livingEntity.level().playSound(null, livingEntity.blockPosition(),
                 SoundEvents.ARMOR_EQUIP_ELYTRA, SoundSource.NEUTRAL,
                 1.0F, 1.0F);
     }

@@ -24,7 +24,7 @@ public class SpiderCharm extends CharmItem implements ICurioItem {
 
     @Override
     public void playRightClickEquipSound(LivingEntity livingEntity, ItemStack stack) {
-        livingEntity.level.playSound(null, livingEntity.blockPosition(),
+        livingEntity.level().playSound(null, livingEntity.blockPosition(),
                 SoundEvents.ARMOR_EQUIP_ELYTRA, SoundSource.NEUTRAL,
                 1.0F, 1.0F);
     }
@@ -38,7 +38,7 @@ public class SpiderCharm extends CharmItem implements ICurioItem {
     public void curioTick(SlotContext slotContext, ItemStack stack) {
         LivingEntity player = slotContext.entity();
         if (player.horizontalCollision) {
-            tryMakeEntityClimb(player.level, player, 0.31D);
+            tryMakeEntityClimb(player.level(), player, 0.31D);
         }
     }
 }

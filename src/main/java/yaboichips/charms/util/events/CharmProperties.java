@@ -26,7 +26,7 @@ public class CharmProperties {
             player.addEffect(new MobEffectInstance(((UpgradedCharmItem) offhandItem).getCharmEffect(), 50, 1));
         }
         if (player.getInventory().isEmpty()) {
-            player.maxUpStep = 0.6f;
+            player.setMaxUpStep(0.6f);;
         }
     }
 

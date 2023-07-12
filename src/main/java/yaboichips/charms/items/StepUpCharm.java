@@ -19,16 +19,16 @@ public class StepUpCharm extends CharmItem implements ICurioItem {
         LivingEntity entity = slotContext.entity();
         if (entity instanceof Player player) {
             if (player.isSprinting()) {
-                player.maxUpStep = 1.0f;
+                player.setMaxUpStep(1);
             } else {
-                player.maxUpStep = 0.6f;
+                player.setMaxUpStep(0.6f);
             }
         }
     }
 
     @Override
     public void playRightClickEquipSound(LivingEntity livingEntity, ItemStack stack) {
-        livingEntity.level.playSound(null, livingEntity.blockPosition(),
+        livingEntity.level().playSound(null, livingEntity.blockPosition(),
                 SoundEvents.ARMOR_EQUIP_ELYTRA, SoundSource.NEUTRAL,
                 1.0F, 1.0F);
     }
