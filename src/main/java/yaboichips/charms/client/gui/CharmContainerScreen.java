@@ -7,7 +7,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 import yaboichips.charms.Charms;
-import yaboichips.charms.container.CharmContainer;
+import yaboichips.charms.common.container.CharmContainer;
 
 public class CharmContainerScreen extends AbstractContainerScreen<CharmContainer> {
 

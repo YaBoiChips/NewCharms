@@ -5,9 +5,9 @@ import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
-import yaboichips.charms.tileentitys.AdvancedCharmTE;
-import yaboichips.charms.tileentitys.CharmContainerTE;
-import yaboichips.charms.tileentitys.UltimateCharmTE;
+import yaboichips.charms.common.tileentitys.AdvancedCharmTE;
+import yaboichips.charms.common.tileentitys.CharmContainerTE;
+import yaboichips.charms.common.tileentitys.UltimateCharmTE;
 
 
 import java.util.function.Supplier;

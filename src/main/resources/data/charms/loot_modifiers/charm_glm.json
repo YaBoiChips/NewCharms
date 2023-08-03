@@ -1,0 +1,6 @@
+{
+  "type": "charm:charm_loot",
+  "conditions": [
+  ],
+  "base": "charms:charm_base"
+}

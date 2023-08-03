@@ -8,8 +8,8 @@ import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import yaboichips.charms.Charms;
-import yaboichips.charms.items.CharmItem;
-import yaboichips.charms.items.UpgradedCharmItem;
+import yaboichips.charms.common.items.CharmItem;
+import yaboichips.charms.common.items.UpgradedCharmItem;
 
 
 @Mod.EventBusSubscriber(modid = Charms.MOD_ID)
