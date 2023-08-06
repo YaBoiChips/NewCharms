@@ -1,14 +1,13 @@
 package yaboichips.charms.client.gui;
 
 import com.mojang.blaze3d.systems.RenderSystem;
-import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 import yaboichips.charms.Charms;
-import yaboichips.charms.container.UltimateCharmContainer;
+import yaboichips.charms.common.container.UltimateCharmContainer;
 
 public class UltamiteContainerScreen extends AbstractContainerScreen<UltimateCharmContainer> {
 
@@ -22,6 +21,7 @@ public class UltamiteContainerScreen extends AbstractContainerScreen<UltimateCha
         this.imageHeight = 183;
         this.inventoryLabelY = this.imageHeight - 94;
     }
+
     @Override
     protected void renderBg(GuiGraphics matrixStack, float p_97788_, int p_97789_, int p_97790_) {
         RenderSystem.clearColor(1.0f, 1.0f, 1.0f, 1.0f);

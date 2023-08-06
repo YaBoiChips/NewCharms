@@ -6,9 +6,9 @@ import net.minecraft.world.inventory.MenuType;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
-import yaboichips.charms.container.AdvancedCharmContainer;
-import yaboichips.charms.container.CharmContainer;
-import yaboichips.charms.container.UltimateCharmContainer;
+import yaboichips.charms.common.container.AdvancedCharmContainer;
+import yaboichips.charms.common.container.CharmContainer;
+import yaboichips.charms.common.container.UltimateCharmContainer;
 
 
 import static yaboichips.charms.Charms.MOD_ID;
