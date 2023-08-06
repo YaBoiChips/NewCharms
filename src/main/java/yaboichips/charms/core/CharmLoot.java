@@ -78,23 +78,6 @@ public class CharmLoot {
 
         }
 
-        @SubscribeEvent
-        public static void onSandLootLoad(@NotNull LootTableLoadEvent event) {
-            String prefix = "minecraft:chests/";
-            String name = event.getName().toString();
-            if (name.startsWith(prefix)) {
-                String file = name.substring(name.indexOf(prefix) + prefix.length());
-                if (INJECTION_TABLES.containsKey(file)) {
-                    try {
-                        ((LootTableAccessor) event.getTable()).getPools().add(getInjectPool(file));
-                        ++injected;
-                    } catch (NullPointerException var5) {
-                        Charms.LOGGER.error("Charms {} is broken by some other mod. Cannot add Customized Dungeon Loot to" + name);
-                    }
-                }
-            }
-
-        }
 
         @NotNull
         private static LootPool getInjectPool(String entryName) {
